@@ -1,12 +1,13 @@
 body {
-    background-image: url(imagens/BackGorund.png);
+    background-image: url(imagens/BackGround.png); /* Muda o fundo do site */
+    background-color: #000; /* Cor de fundo para navegadores que não suportam imagens de fundo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: sans-serif; /* Fonte padrão do site */
   }
   
   .container {
@@ -19,7 +20,7 @@ body {
   .main {
     padding: 20px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo e transparência a ordem é (vermelho, verde, azul, porcentagem da transparência) */
   }
   
   .titulo {
@@ -35,18 +36,18 @@ body {
   .logo {
     grid-column: 1;
     justify-self: start;
-    width: 96px;
+    width: 96px; /* Tamanho do logo */
     height: 96px;
-    border-radius: 50%;
+    border-radius: 50%; /* Deixa o logo redondo */
   }
   
   h1 {
-    grid-column: 2;
+    grid-column: 2; /* Centraliza o texto */
     margin: 0;
-    color: white;
-    font-size: 40px;
+    color: white; /* Cor do texto */
+    font-size: 40px; /* Tamanho do texto */
     text-align: center;
-    text-shadow: 0px 0px 16.5px #FFFFFF;
+    text-shadow: 0px 0px 16.5px #FFFFFF; /* Pra deixar o texto neon */
   }
   
   p {
@@ -59,23 +60,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 5px; /* Espaçamento entre os botões */
     margin-top: 30px;
   }
   
   .button {
-    background-color: rgba(24, 24, 27, 0.3);
-    color: rgb(161, 161, 170);
+    background-color: rgba(24, 24, 27, 0.3); /* Cor do botão */
+    color: rgb(161, 161, 170); /* Cor do texto do botão */
     padding: 20px 24px;
     width: 100%;
     max-width: 400px;
     display: grid;
     grid-template-columns: 60px auto;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+    transition: all 0.2s ease; 
+    backdrop-filter: blur(10px); /* Desfoque do fundo do botão */
+    -webkit-backdrop-filter: blur(10px); /* Desfoque do fundo do botão para Safari */
     position: relative;
     overflow: hidden;
     text-decoration: none;
@@ -93,7 +94,7 @@ body {
   }
 
   .button:hover{
-    background-color: rgba(24, 24, 27);
+    background-color: rgba(24, 24, 27); /* Cor do botão ao passar o mouse */
     transition: all 0.5s ease;  
   }
   
@@ -102,7 +103,7 @@ body {
     grid-column: 1;
     justify-self: start;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Pra ficar na frente do fundo do botão */
   }
   
   .button span {
@@ -111,6 +112,8 @@ body {
     z-index: 1;
   }
   
+/*daqui até o '@media' é o player de som*/
+
   .player {
     position: fixed;
     bottom: 20px;
@@ -197,3 +200,70 @@ body {
     border: none;
   }
   
+/* Responsividade pra celular*/
+
+  @media (max-width: 700px) {
+    .titulo{
+      display: block;
+    }
+    h1{
+      font-size: 5vw;
+    }
+
+    .logo{
+      width: 15vw;
+      height: 15vw;
+    }
+
+    .main{
+      width: 70vw;
+    }
+
+    p{
+      font-size: 3vw;
+    }
+
+    .botao{
+      width: 70vw;
+      margin: 0 auto;
+    }
+    .button span{
+      font-size: 3vw;
+    }
+    .button{
+      padding: 3vw 2vw;
+    }
+
+    .button::before{
+      width: 10vw;
+    }
+    .logo-discord{
+      height: 5vw;
+    }
+    .player {
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      flex-direction: column;
+      gap: 8px;
+      width: 80vw;
+      max-width: 300px;
+    }
+    
+    .controls {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .play-btn {
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+    
+    #volume {
+      width: 60vw;
+      max-width: 200px;
+    }
+    
+  }
